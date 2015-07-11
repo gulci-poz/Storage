@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Storage</string>
 
-        <string name="action_settings">Settings</string>
-    <string name="btn_write_value">Write value</string>
+    <string name="action_settings">Settings</string>
+    <string name="tv_user_name_prompt">Enter user name:</string>
+    <string name="btn_add_user">Add user</string>
+    <string name="btn_show_user">Show user</string>
 </resources>

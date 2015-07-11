@@ -8,28 +8,51 @@
                 android:paddingTop="@dimen/activity_vertical_margin"
                 tools:context=".JPrefsActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvUserPrompt"
+        android:text="@string/tv_user_name_prompt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etEnterValue"
+        android:layout_below="@id/tvUserPrompt"
+        android:layout_marginTop="20dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_write_value"
-        android:id="@+id/btnWriteValue"
-        android:layout_below="@id/etEnterValue"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:id="@+id/layoutButtons"
+        android:layout_below="@id/etEnterValue">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_add_user"
+            android:id="@+id/btnAddValue"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_show_user"
+            android:id="@+id/btnWriteValue"/>
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvDisplayMsg"
-        android:layout_below="@id/btnWriteValue"
+        android:layout_below="@id/layoutButtons"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 </RelativeLayout>

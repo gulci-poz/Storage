@@ -22,8 +22,8 @@ public class JPrefsActivity extends AppCompatActivity {
 
         settings = getPreferences(MODE_PRIVATE);
 
-        Button btnWriteValue = (Button) findViewById(R.id.btnWriteValue);
-        btnWriteValue.setOnClickListener(new View.OnClickListener() {
+        Button btnAddValue = (Button) findViewById(R.id.btnAddValue);
+        btnAddValue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = settings.edit();
@@ -31,6 +31,15 @@ public class JPrefsActivity extends AppCompatActivity {
                 editor.putString(USERNAME, prefValue);
                 editor.commit();
                 UIHelper.displayText(JPrefsActivity.this, R.id.tvDisplayMsg, "Preference saved");
+            }
+        });
+
+        Button btnWriteValue = (Button) findViewById(R.id.btnWriteValue);
+        btnWriteValue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String prefValue = settings.getString(USERNAME, "User not found");
+                UIHelper.displayText(JPrefsActivity.this, R.id.tvDisplayMsg, prefValue);
             }
         });
     }
